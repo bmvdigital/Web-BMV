@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
+import JsonLd from "@/components/JsonLd";
 
 const ParticleWave = dynamic(() => import("@/components/ParticleWave"), { ssr: false });
 
@@ -43,9 +44,37 @@ const services = [
   },
 ];
 
+export const metadata = {
+  title: "BMV Digital | Desarrollo Web, Software, SEO & IA en México",
+  description: "Empresa mexicana de tecnología SaaS. Desarrollo web profesional, análisis de datos, software a medida, auditoría SEO, optimización GEO para buscadores con IA (ChatGPT, Perplexity, Gemini) y cursos de inteligencia artificial.",
+  keywords: ["BMV Digital", "desarrollo web México", "agencia digital México", "software empresarial", "SEO México", "GEO IA", "cursos inteligencia artificial"],
+  alternates: { canonical: "https://www.bmvdigital.com.mx" },
+  openGraph: {
+    title: "BMV Digital | Tecnología SaaS para Empresas en México",
+    description: "Desarrollo web, análisis de datos, software a medida, auditoría SEO, optimización GEO e IA. Soluciones digitales que generan resultados reales.",
+    url: "https://www.bmvdigital.com.mx",
+    type: "website",
+  },
+};
+
 export default function HomePage() {
   return (
     <>
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://www.bmvdigital.com.mx/#webpage",
+        url: "https://www.bmvdigital.com.mx",
+        name: "BMV Digital — Desarrollo Web, Software, SEO & IA en México",
+        description: "Empresa mexicana de tecnología SaaS especializada en desarrollo web, análisis de datos, software a medida, auditoría SEO, GEO para buscadores con IA y cursos de inteligencia artificial.",
+        isPartOf: { "@id": "https://www.bmvdigital.com.mx/#website" },
+        publisher: { "@id": "https://www.bmvdigital.com.mx/#organization" },
+        inLanguage: "es-MX",
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", "h2", ".section-tag"],
+        },
+      }} />
       {/* ── HERO ─────────────────────────────────────────────── */}
       <section className="relative w-full h-screen overflow-hidden flex items-center">
         {/* Particle canvas */}

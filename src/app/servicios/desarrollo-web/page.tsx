@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
+import JsonLd from "@/components/JsonLd";
 
 const features = [
   { title: "DISEÑO UI/UX", body: "Interfaces que convierten visitantes en clientes. Diseño centrado en el usuario, pruebas A/B y optimización continua." },
@@ -18,9 +19,52 @@ const process = [
   { num: "04", title: "LANZAMIENTO", body: "Deploy, pruebas de rendimiento, SEO técnico y monitoreo. Tu sitio sale al mundo en óptimas condiciones." },
 ];
 
+export const metadata = {
+  title: "Desarrollo Web Profesional en México | Next.js & React",
+  description: "Diseño y desarrollo web profesional en México. Sitios web, e-commerce y aplicaciones SaaS con Next.js, React y TypeScript. Alto rendimiento, SEO técnico incluido.",
+  keywords: ["desarrollo web México", "diseño web profesional", "Next.js México", "React México", "e-commerce México", "web apps SaaS"],
+  alternates: { canonical: "https://www.bmvdigital.com.mx/servicios/desarrollo-web" },
+  openGraph: {
+    title: "Desarrollo Web Profesional | BMV Digital México",
+    description: "Sitios web, e-commerce y aplicaciones web de alto rendimiento. Next.js, React, TypeScript. SEO técnico incluido desde el día uno.",
+    url: "https://www.bmvdigital.com.mx/servicios/desarrollo-web",
+  },
+};
+
 export default function DesarrolloWebPage() {
   return (
     <>
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.bmvdigital.com.mx" },
+          { "@type": "ListItem", position: 2, name: "Servicios", item: "https://www.bmvdigital.com.mx/servicios" },
+          { "@type": "ListItem", position: 3, name: "Desarrollo Web", item: "https://www.bmvdigital.com.mx/servicios/desarrollo-web" },
+        ]
+      }} />
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "Service",
+        name: "Desarrollo Web Profesional",
+        provider: { "@type": "Organization", name: "BMV Digital", url: "https://www.bmvdigital.com.mx" },
+        description: "Diseño y desarrollo de sitios web, aplicaciones web y plataformas SaaS con Next.js, React y TypeScript. Incluye SEO técnico, diseño UI/UX y optimización de rendimiento.",
+        areaServed: { "@type": "Country", name: "Mexico" },
+        serviceType: "Desarrollo Web",
+        url: "https://www.bmvdigital.com.mx/servicios/desarrollo-web",
+      }} />
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: [
+          { "@type": "Question", name: "¿Cuánto cuesta desarrollar una página web en México?", acceptedAnswer: { "@type": "Answer", text: "El costo de una página web en México varía según el tipo de proyecto. Una landing page puede costar desde $15,000 MXN, un sitio corporativo entre $30,000 y $80,000 MXN, y una plataforma SaaS o e-commerce desde $80,000 MXN en adelante. En BMV Digital ofrecemos presupuesto sin costo." } },
+          { "@type": "Question", name: "¿Cuánto tiempo tarda el desarrollo de un sitio web?", acceptedAnswer: { "@type": "Answer", text: "Una landing page tarda entre 1 y 2 semanas. Un sitio corporativo completo entre 3 y 6 semanas. Una aplicación web o plataforma SaaS puede tomar entre 2 y 6 meses dependiendo de la complejidad." } },
+          { "@type": "Question", name: "¿Qué tecnologías utilizan para el desarrollo web?", acceptedAnswer: { "@type": "Answer", text: "Utilizamos Next.js y React para el frontend, Node.js o Python para el backend, y bases de datos como PostgreSQL o MongoDB. Todos nuestros proyectos incluyen TypeScript para mayor seguridad del código y son desplegados en plataformas como Vercel o AWS." } },
+          { "@type": "Question", name: "¿El desarrollo web incluye SEO?", acceptedAnswer: { "@type": "Answer", text: "Sí. Todos nuestros proyectos de desarrollo web incluyen SEO técnico desde el primer día: velocidad de carga, Core Web Vitals, metadata optimizada, datos estructurados (Schema.org), sitemap XML y robots.txt configurados correctamente." } },
+          { "@type": "Question", name: "¿Pueden desarrollar tiendas en línea o e-commerce?", acceptedAnswer: { "@type": "Answer", text: "Sí. Desarrollamos tiendas en línea completas con carrito de compras, pasarelas de pago (Stripe, PayPal, MercadoPago), gestión de inventario y paneles de administración. También integramos con plataformas como Shopify según las necesidades del proyecto." } },
+        ]
+      }} />
+
       {/* Hero */}
       <section className="relative pt-40 pb-24 px-6 md:px-16 border-b border-white/5 overflow-hidden">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-end">
@@ -105,6 +149,35 @@ export default function DesarrolloWebPage() {
               {tech}
             </span>
           ))}
+        </div>
+      </section>
+
+      {/* FAQ Section — visible content for GEO */}
+      <section className="py-24 px-6 md:px-16 border-t border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <ScrollReveal>
+            <p className="section-tag">PREGUNTAS FRECUENTES</p>
+            <h2 className="text-3xl md:text-4xl font-black uppercase mb-12">LO QUE MÁS<br />NOS PREGUNTAN.</h2>
+          </ScrollReveal>
+          <div className="flex flex-col divide-y divide-white/5">
+            {[
+              { q: "¿Cuánto cuesta desarrollar una página web en México?", a: "El costo varía según el proyecto: una landing page desde $15,000 MXN, un sitio corporativo entre $30,000 y $80,000 MXN, y una plataforma SaaS desde $80,000 MXN. Ofrecemos presupuesto sin costo ni compromiso." },
+              { q: "¿Cuánto tiempo tarda el desarrollo?", a: "Una landing page tarda 1-2 semanas. Un sitio corporativo 3-6 semanas. Una aplicación web o SaaS entre 2 y 6 meses según complejidad." },
+              { q: "¿Qué tecnologías utilizan?", a: "Next.js, React y TypeScript en el frontend. Node.js o Python en el backend. PostgreSQL o MongoDB para bases de datos. Desplegamos en Vercel o AWS." },
+              { q: "¿El desarrollo incluye SEO?", a: "Sí. Todos nuestros proyectos incluyen SEO técnico: velocidad, Core Web Vitals, metadata, Schema.org, sitemap XML y robots.txt correctamente configurados." },
+              { q: "¿Desarrollan e-commerce o tiendas en línea?", a: "Sí. Tiendas completas con carrito, pagos (Stripe, MercadoPago), inventario y panel de administración. También integramos Shopify si es la mejor opción para tu caso." },
+            ].map((item, i) => (
+              <ScrollReveal key={i} delay={i * 60}>
+                <details className="py-6 group cursor-pointer">
+                  <summary className="flex items-center justify-between text-sm font-bold uppercase tracking-wide list-none">
+                    {item.q}
+                    <span className="text-[#6EE010] text-xl group-open:rotate-45 transition-transform ml-4 flex-shrink-0">+</span>
+                  </summary>
+                  <p className="mt-4 text-white/40 text-sm leading-relaxed max-w-3xl">{item.a}</p>
+                </details>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </section>
 

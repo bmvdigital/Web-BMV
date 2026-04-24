@@ -14,7 +14,9 @@
     "react-dom": "^18",
     "three": "^0.163.0",
     "framer-motion": "^11.3.0",
-    "lenis": "^1.1.2"
+    "lenis": "^1.1.2",
+    "schema-dts": "^1.1.2",
+    "react-schemaorg": "^2.0.0"
   },
   "devDependencies": {
     "@types/node": "^20",
