@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
+import JsonLd from "@/components/JsonLd";
 
 const courses = [
   {
@@ -39,9 +40,52 @@ const courses = [
   },
 ];
 
+export const metadata = {
+  title: "Cursos de Inteligencia Artificial en México | Prompt Engineering & LLMs",
+  description: "Formación práctica en IA para empresas y profesionales en México. Prompt engineering, automatización con ChatGPT, LangChain, desarrollo con LLMs y IA para equipos. Online y presencial.",
+  keywords: ["cursos inteligencia artificial México", "curso ChatGPT", "prompt engineering", "LangChain curso", "automatización IA", "formación IA empresas", "curso LLMs"],
+  alternates: { canonical: "https://www.bmvdigital.com.mx/servicios/cursos-ia" },
+  openGraph: {
+    title: "Cursos de Inteligencia Artificial | BMV Digital México",
+    description: "De cero a producción con IA. Prompt engineering, automatización, LangChain y desarrollo con LLMs. Cursos online y presenciales para equipos y empresas.",
+    url: "https://www.bmvdigital.com.mx/servicios/cursos-ia",
+  },
+};
+
 export default function CursosIAPage() {
   return (
     <>
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.bmvdigital.com.mx" },
+          { "@type": "ListItem", position: 2, name: "Servicios", item: "https://www.bmvdigital.com.mx/servicios" },
+          { "@type": "ListItem", position: 3, name: "Cursos de IA", item: "https://www.bmvdigital.com.mx/servicios/cursos-ia" },
+        ]
+      }} />
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "Service",
+        name: "Cursos de Inteligencia Artificial",
+        provider: { "@type": "Organization", name: "BMV Digital", url: "https://www.bmvdigital.com.mx" },
+        description: "Formación práctica en inteligencia artificial para empresas y profesionales en México. Incluye cursos de Fundamentos de IA, Prompt Engineering, Automatización con IA, Desarrollo con LLMs y programas corporativos personalizados.",
+        areaServed: { "@type": "Country", name: "Mexico" },
+        serviceType: "Formación en Inteligencia Artificial",
+        url: "https://www.bmvdigital.com.mx/servicios/cursos-ia",
+      }} />
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: [
+          { "@type": "Question", name: "¿Qué cursos de inteligencia artificial ofrecen?", acceptedAnswer: { "@type": "Answer", text: "Ofrecemos 5 niveles: Fundamentos de IA (8h), Prompt Engineering (6h), Automatización con IA (12h), Desarrollo con LLMs usando LangChain (16h) y cursos corporativos personalizados para equipos empresariales." } },
+          { "@type": "Question", name: "¿Necesito conocimientos previos de programación para los cursos de IA?", acceptedAnswer: { "@type": "Answer", text: "Depende del curso. Los cursos de Fundamentos de IA y Prompt Engineering no requieren programación. Para Automatización con IA se recomienda conocimiento básico. Para Desarrollo con LLMs sí se requiere experiencia en Python." } },
+          { "@type": "Question", name: "¿Los cursos de IA son en línea o presenciales?", acceptedAnswer: { "@type": "Answer", text: "Ofrecemos ambas modalidades: online en vivo con instructor, grabado on-demand para aprender a tu ritmo, talleres presenciales y formación in-company en las instalaciones de tu empresa." } },
+          { "@type": "Question", name: "¿Qué es el Prompt Engineering y para qué sirve?", acceptedAnswer: { "@type": "Answer", text: "El Prompt Engineering es el arte y la ciencia de comunicarse eficazmente con modelos de IA como ChatGPT. Aprender a escribir prompts precisos y estructurados permite obtener resultados de mucho mayor calidad, automatizar tareas y construir flujos de trabajo inteligentes sin escribir código." } },
+          { "@type": "Question", name: "¿Pueden capacitar a todo mi equipo en inteligencia artificial?", acceptedAnswer: { "@type": "Answer", text: "Sí. Ofrecemos programas de formación corporativa personalizados según el nivel y las necesidades de tu equipo. Desde una sesión introductoria de 2 horas hasta programas intensivos de varias semanas. Adaptamos el contenido a tu industria específica." } },
+        ]
+      }} />
+
       <section className="relative pt-40 pb-24 px-6 md:px-16 border-b border-white/5 overflow-hidden">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-end">
           <div>
@@ -117,6 +161,35 @@ export default function CursosIAPage() {
               {f}
             </span>
           ))}
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-24 px-6 md:px-16 border-t border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <ScrollReveal>
+            <p className="section-tag">PREGUNTAS FRECUENTES</p>
+            <h2 className="text-3xl md:text-4xl font-black uppercase mb-12">TODO SOBRE<br /><span style={{ color: "#1ABC9C" }}>NUESTROS CURSOS.</span></h2>
+          </ScrollReveal>
+          <div className="flex flex-col divide-y divide-white/5">
+            {[
+              { q: "¿Qué cursos de inteligencia artificial ofrecen?", a: "Ofrecemos 5 niveles: Fundamentos de IA (8h), Prompt Engineering (6h), Automatización con IA (12h), Desarrollo con LLMs usando LangChain (16h) y cursos corporativos personalizados para equipos empresariales." },
+              { q: "¿Necesito conocimientos previos de programación?", a: "Depende del curso. Fundamentos de IA y Prompt Engineering no requieren programación. Para Automatización con IA se recomienda conocimiento básico. Para Desarrollo con LLMs sí se requiere experiencia en Python." },
+              { q: "¿Los cursos son en línea o presenciales?", a: "Ofrecemos ambas modalidades: online en vivo con instructor, grabado on-demand para aprender a tu ritmo, talleres presenciales y formación in-company en las instalaciones de tu empresa." },
+              { q: "¿Qué es el Prompt Engineering y para qué sirve?", a: "El Prompt Engineering es el arte y la ciencia de comunicarse eficazmente con modelos de IA como ChatGPT. Aprender a escribir prompts precisos y estructurados permite obtener resultados de mayor calidad, automatizar tareas y construir flujos de trabajo inteligentes sin escribir código." },
+              { q: "¿Pueden capacitar a todo mi equipo?", a: "Sí. Ofrecemos programas de formación corporativa personalizados según el nivel y las necesidades de tu equipo. Desde una sesión introductoria de 2 horas hasta programas intensivos de varias semanas. Adaptamos el contenido a tu industria específica." },
+            ].map((item, i) => (
+              <ScrollReveal key={i} delay={i * 60}>
+                <details className="py-6 group cursor-pointer">
+                  <summary className="flex items-center justify-between text-sm font-bold uppercase tracking-wide list-none">
+                    {item.q}
+                    <span style={{ color: "#1ABC9C" }} className="text-xl group-open:rotate-45 transition-transform ml-4 flex-shrink-0">+</span>
+                  </summary>
+                  <p className="mt-4 text-white/40 text-sm leading-relaxed max-w-3xl">{item.a}</p>
+                </details>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </section>
 
