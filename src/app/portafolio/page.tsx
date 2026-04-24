@@ -1,160 +1,50 @@
-"use client";
+import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import PortafolioClient from "@/components/PortafolioClient";
 
-import { useState } from "react";
-import Link from "next/link";
-import ScrollReveal from "@/components/ScrollReveal";
-
-const projects = [
-  {
-    id: "eta-aviacion",
-    num: "01",
-    name: "ETA AVIACIÓN",
-    category: "DESARROLLO WEB",
-    url: "https://etaaviacion.com/",
-    year: "2024",
-    tags: ["Next.js", "UI/UX", "Diseño Corporativo"],
-    description:
-      "Sitio web corporativo para empresa líder en servicios de aviación en México. " +
-      "Diseño moderno y profesional que transmite confianza y solidez institucional. " +
-      "Optimizado para SEO, velocidad de carga y conversión.",
-    color: "#6EE010",
-    gradient: "from-[#0a1628] to-[#1a2a4a]",
+export const metadata: Metadata = {
+  title: "Portafolio de Proyectos Web en México | BMV Digital",
+  description: "Proyectos de desarrollo web, software y tecnología realizados por BMV Digital. Casos de éxito reales: diseño, desarrollo y resultados medibles para empresas mexicanas.",
+  keywords: ["portafolio desarrollo web México", "casos de éxito agencia digital", "proyectos web México", "ETA Aviación"],
+  alternates: { canonical: "https://www.bmvdigital.com.mx/portafolio" },
+  openGraph: {
+    title: "Portafolio | BMV Digital México",
+    description: "Proyectos reales, resultados reales. Casos de éxito de desarrollo web y tecnología para empresas mexicanas.",
+    url: "https://www.bmvdigital.com.mx/portafolio",
   },
-];
+};
 
 export default function PortafolioPage() {
-  const [active, setActive] = useState(projects[0].id);
-  const current = projects.find((p) => p.id === active) ?? projects[0];
-
   return (
     <>
-      {/* Hero */}
-      <section className="relative pt-40 pb-16 px-6 md:px-16 border-b border-white/5 overflow-hidden">
-        <div className="max-w-6xl mx-auto">
-          <p className="section-tag">PORTAFOLIO</p>
-          <h1 className="text-6xl md:text-8xl font-black uppercase leading-none tracking-tight">
-            CONSTRUIDOS<br />
-            EN EL BORDE DE<br />
-            <span className="text-[#6EE010]">LO EXPONENCIAL.</span>
-          </h1>
-          <p className="mt-8 text-white/40 text-sm max-w-lg leading-relaxed tracking-wide">
-            Cada proyecto es la historia de un reto convertido en solución digital.
-            Trabajo real, resultados medibles.
-          </p>
-        </div>
-        <div className="absolute right-8 top-24 text-[200px] font-black text-white/[0.02] leading-none select-none hidden md:block">
-          WRK
-        </div>
-      </section>
-
-      {/* Portfolio layout — sidebar + main */}
-      <section className="py-16 px-6 md:px-16">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-[180px_1fr] gap-12">
-          {/* Sidebar project index */}
-          <nav className="flex flex-col gap-3 pt-2">
-            <p className="text-[10px] tracking-[0.2em] uppercase text-white/30 mb-4">PROYECTOS</p>
-            {projects.map((p) => (
-              <button
-                key={p.id}
-                onClick={() => setActive(p.id)}
-                className={`text-left text-[10px] tracking-[0.15em] uppercase flex items-center gap-2 transition-colors ${
-                  active === p.id ? "text-[#6EE010]" : "text-white/30 hover:text-white/60"
-                }`}
-              >
-                {active === p.id && <span className="w-1 h-1 rounded-full bg-[#6EE010]" />}
-                {p.name}
-              </button>
-            ))}
-          </nav>
-
-          {/* Main project display */}
-          <div>
-            <ScrollReveal key={current.id}>
-              {/* Project image / preview */}
-              <div
-                className={`relative rounded-xl overflow-hidden aspect-[16/8] bg-gradient-to-br ${current.gradient} mb-8 flex items-center justify-center group`}
-              >
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-500" />
-                <a
-                  href={current.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative z-10 flex flex-col items-center gap-4 text-center"
-                >
-                  <span className="text-4xl md:text-6xl font-black uppercase tracking-widest text-white/30">
-                    {current.name}
-                  </span>
-                  <span className="bracket-btn text-[10px]">VISITAR SITIO</span>
-                </a>
-
-                {/* Counter */}
-                <div className="absolute top-6 right-6 counter-label text-base">
-                  {current.num} / {String(projects.length).padStart(2, "0")}
-                </div>
-
-                {/* Corner brackets */}
-                <div className="absolute top-4 left-4 w-6 h-6 border-t border-l border-white/20" />
-                <div className="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-white/20" />
-              </div>
-
-              {/* Project info */}
-              <div className="grid md:grid-cols-2 gap-8 mb-6">
-                <div>
-                  <h2 className="text-3xl md:text-4xl font-black uppercase tracking-wide mb-3">
-                    {current.name}
-                  </h2>
-                  <div className="line-sep" />
-                  <p className="text-white/40 text-sm leading-relaxed">{current.description}</p>
-                </div>
-                <div className="flex flex-col justify-between">
-                  <div>
-                    <p className="text-[10px] tracking-[0.2em] uppercase text-white/30 mb-1">CATEGORÍA</p>
-                    <p className="text-sm font-medium" style={{ color: current.color }}>{current.category}</p>
-                  </div>
-                  <div className="mt-6">
-                    <p className="text-[10px] tracking-[0.2em] uppercase text-white/30 mb-1">AÑO</p>
-                    <p className="text-sm font-medium text-white">{current.year}</p>
-                  </div>
-                  <div className="mt-6">
-                    <p className="text-[10px] tracking-[0.2em] uppercase text-white/30 mb-3">TECNOLOGÍAS</p>
-                    <div className="flex flex-wrap gap-2">
-                      {current.tags.map((tag) => (
-                        <span key={tag} className="text-[9px] tracking-[0.15em] uppercase px-3 py-1.5 border border-white/10 rounded-full text-white/40">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="mt-8">
-                    <a
-                      href={current.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bracket-btn text-[10px] pl-0"
-                    >
-                      VER PROYECTO EN VIVO
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA — work with us */}
-      <section className="py-24 px-6 md:px-16 border-t border-white/5">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-          <ScrollReveal>
-            <p className="section-tag">¿SIGUIENTE PROYECTO?</p>
-            <h2 className="text-4xl md:text-5xl font-black uppercase">
-              TU PROYECTO<br />
-              <span className="text-[#6EE010]">AQUÍ.</span>
-            </h2>
-          </ScrollReveal>
-          <Link href="/contacto" className="bracket-btn text-[10px]">TRABAJEMOS JUNTOS</Link>
-        </div>
-      </section>
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.bmvdigital.com.mx" },
+          { "@type": "ListItem", position: 2, name: "Portafolio", item: "https://www.bmvdigital.com.mx/portafolio" },
+        ]
+      }} />
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        name: "Portafolio BMV Digital",
+        description: "Proyectos de desarrollo web y tecnología realizados por BMV Digital para empresas mexicanas.",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            item: {
+              "@type": "CreativeWork",
+              name: "ETA Aviación — Sitio Web Corporativo",
+              url: "https://etaaviacion.com/",
+              description: "Diseño y desarrollo del sitio web corporativo para empresa líder en servicios de aviación en México.",
+              creator: { "@type": "Organization", name: "BMV Digital" },
+            }
+          }
+        ]
+      }} />
+      <PortafolioClient />
     </>
   );
 }

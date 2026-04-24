@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
+import JsonLd from "@/components/JsonLd";
 
 const features = [
   { title: "AUDITORÍA DE CITABILIDAD", body: "Analizamos si tu contenido es citado por ChatGPT, Perplexity, Gemini y Copilot cuando alguien hace preguntas de tu industria." },
@@ -31,9 +32,54 @@ const auditItems = [
   "Plan de acción priorizado y medible",
 ];
 
+export const metadata = {
+  title: "Auditoría GEO — Optimización para Buscadores con IA | BMV Digital",
+  description: "Generative Engine Optimization (GEO): optimizamos tu marca para aparecer en respuestas de ChatGPT, Perplexity, Gemini y Copilot. La nueva frontera del posicionamiento digital.",
+  keywords: ["GEO generative engine optimization", "optimización ChatGPT", "SEO para IA", "Perplexity SEO", "Gemini optimización", "LLM SEO México", "buscadores IA"],
+  alternates: { canonical: "https://www.bmvdigital.com.mx/servicios/auditoria-geo" },
+  openGraph: {
+    title: "Auditoría GEO — Optimización para Buscadores con IA | BMV Digital",
+    description: "¿Aparece tu marca cuando alguien le pregunta a ChatGPT o Perplexity? Con GEO optimizamos tu presencia en los buscadores de nueva generación.",
+    url: "https://www.bmvdigital.com.mx/servicios/auditoria-geo",
+  },
+};
+
 export default function AuditoriaGeoPage() {
   return (
     <>
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.bmvdigital.com.mx" },
+          { "@type": "ListItem", position: 2, name: "Servicios", item: "https://www.bmvdigital.com.mx/servicios" },
+          { "@type": "ListItem", position: 3, name: "Auditoría GEO", item: "https://www.bmvdigital.com.mx/servicios/auditoria-geo" },
+        ]
+      }} />
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "Service",
+        name: "Auditoría GEO — Generative Engine Optimization",
+        provider: { "@type": "Organization", name: "BMV Digital", url: "https://www.bmvdigital.com.mx" },
+        description: "Optimización de presencia digital para buscadores con inteligencia artificial generativa: ChatGPT, Perplexity, Gemini, Microsoft Copilot y Claude. Incluye auditoría de citabilidad, optimización de contenido y monitoreo continuo.",
+        areaServed: { "@type": "Country", name: "Mexico" },
+        serviceType: "GEO Generative Engine Optimization",
+        url: "https://www.bmvdigital.com.mx/servicios/auditoria-geo",
+        keywords: "GEO, Generative Engine Optimization, ChatGPT SEO, Perplexity SEO, LLM optimization",
+      }} />
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: [
+          { "@type": "Question", name: "¿Qué es GEO (Generative Engine Optimization)?", acceptedAnswer: { "@type": "Answer", text: "GEO o Generative Engine Optimization es la disciplina de optimizar el contenido y la presencia digital de una marca para aparecer citada en las respuestas de los motores de búsqueda basados en inteligencia artificial generativa, como ChatGPT Search, Perplexity AI, Google Gemini y Microsoft Copilot. Mientras el SEO tradicional busca posicionar en resultados de Google, el GEO busca que los modelos de lenguaje (LLMs) mencionen y recomienden tu marca cuando los usuarios hacen preguntas relacionadas con tu industria." } },
+          { "@type": "Question", name: "¿Por qué necesito GEO si ya tengo SEO?", acceptedAnswer: { "@type": "Answer", text: "El SEO y el GEO son complementarios pero distintos. El 40% de las búsquedas ya son respondidas directamente por IA sin que el usuario haga clic en ningún resultado. Si tu marca no está optimizada para los buscadores generativos, estás perdiendo visibilidad ante una audiencia creciente que confía en ChatGPT, Perplexity y Gemini para encontrar proveedores, servicios y recomendaciones. El GEO es la nueva capa de visibilidad que el SEO tradicional no cubre." } },
+          { "@type": "Question", name: "¿Cómo sé si ChatGPT o Perplexity mencionan mi marca?", acceptedAnswer: { "@type": "Answer", text: "En una auditoría GEO de BMV Digital analizamos sistemáticamente si tu marca, productos o servicios aparecen en las respuestas de los principales LLMs cuando los usuarios hacen preguntas de tu industria. Realizamos cientos de consultas de prueba en ChatGPT, Perplexity, Gemini y Copilot para mapear tu presencia actual y la de tus competidores en estos buscadores." } },
+          { "@type": "Question", name: "¿Qué técnicas se usan en la optimización GEO?", acceptedAnswer: { "@type": "Answer", text: "Las principales técnicas de GEO incluyen: optimización de contenido para que sea fácilmente citado por LLMs (claro, autoritativo y estructurado), implementación de datos estructurados Schema.org avanzados, creación de contenido en formato FAQ y Q&A que los modelos prefieren citar, estrategia de autoridad y credibilidad de la marca, optimización de menciones en fuentes que los LLMs consultan (Wikipedia, medios de comunicación, directorios de autoridad) y monitoreo continuo de presencia en respuestas de IA." } },
+          { "@type": "Question", name: "¿Cuánto tiempo tarda en verse resultados de GEO?", acceptedAnswer: { "@type": "Answer", text: "Los primeros cambios en la presencia GEO pueden observarse entre 4 y 8 semanas después de implementar las optimizaciones, ya que los LLMs actualizan sus índices periódicamente. Los resultados completos y sostenidos generalmente se ven entre 3 y 6 meses. Es importante monitorear continuamente, ya que los modelos de IA se actualizan con frecuencia." } },
+          { "@type": "Question", name: "¿El GEO reemplaza al SEO tradicional?", acceptedAnswer: { "@type": "Answer", text: "No, el GEO complementa al SEO tradicional. Ambos son necesarios en 2025 y 2026. El SEO sigue siendo esencial para el tráfico orgánico de Google, mientras que el GEO captura la visibilidad en los buscadores generativos. En BMV Digital ofrecemos auditorías integradas SEO + GEO para cubrir ambas dimensiones del posicionamiento digital." } },
+        ]
+      }} />
+
       {/* Hero */}
       <section className="relative pt-40 pb-24 px-6 md:px-16 border-b border-white/5 overflow-hidden">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-end">
@@ -202,6 +248,36 @@ export default function AuditoriaGeoPage() {
               {tech}
             </span>
           ))}
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-24 px-6 md:px-16 border-t border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <ScrollReveal>
+            <p className="section-tag">PREGUNTAS FRECUENTES</p>
+            <h2 className="text-3xl md:text-4xl font-black uppercase mb-12">TODO SOBRE<br /><span style={{ color: "#A855F7" }}>GEO.</span></h2>
+          </ScrollReveal>
+          <div className="flex flex-col divide-y divide-white/5">
+            {[
+              { q: "¿Qué es GEO (Generative Engine Optimization)?", a: "GEO es la disciplina de optimizar tu presencia digital para que los buscadores con IA (ChatGPT, Perplexity, Gemini, Copilot) mencionen y recomienden tu marca. Mientras el SEO posiciona en Google, el GEO te posiciona en la nueva generación de buscadores." },
+              { q: "¿Por qué necesito GEO si ya tengo SEO?", a: "El 40% de las búsquedas ya son respondidas directamente por IA sin que el usuario haga clic. Si tu marca no está optimizada para LLMs, estás perdiendo visibilidad ante una audiencia que crece exponencialmente. El GEO cubre la capa que el SEO tradicional no alcanza." },
+              { q: "¿Cómo sé si ChatGPT menciona mi marca?", a: "En una auditoría GEO analizamos cientos de consultas en ChatGPT, Perplexity, Gemini y Copilot para mapear si tu marca aparece cuando los usuarios buscan servicios de tu industria. También benchmarkeamos tu presencia vs. la de tus competidores." },
+              { q: "¿Qué técnicas usa el GEO?", a: "Contenido optimizado para citabilidad por LLMs, Schema.org avanzado, secciones FAQ estructuradas, estrategia de autoridad de marca, optimización en fuentes que los LLMs consultan (medios, directorios) y monitoreo continuo." },
+              { q: "¿Cuánto tarda en verse resultados?", a: "Primeros cambios en 4-8 semanas (los LLMs actualizan periódicamente). Resultados completos entre 3 y 6 meses. El monitoreo continuo es esencial ya que los modelos se actualizan con frecuencia." },
+              { q: "¿GEO reemplaza al SEO?", a: "No, se complementan. El SEO sigue siendo vital para tráfico orgánico de Google. El GEO captura visibilidad en buscadores generativos. En BMV Digital ofrecemos auditorías integradas SEO + GEO." },
+            ].map((item, i) => (
+              <ScrollReveal key={i} delay={i * 60}>
+                <details className="py-6 group cursor-pointer">
+                  <summary className="flex items-center justify-between text-sm font-bold uppercase tracking-wide list-none">
+                    {item.q}
+                    <span style={{ color: "#A855F7" }} className="text-xl group-open:rotate-45 transition-transform ml-4 flex-shrink-0">+</span>
+                  </summary>
+                  <p className="mt-4 text-white/40 text-sm leading-relaxed max-w-3xl">{item.a}</p>
+                </details>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </section>
 
