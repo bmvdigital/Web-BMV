@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
+import JsonLd from "@/components/JsonLd";
 
 const services = [
   {
@@ -64,9 +65,29 @@ const services = [
   },
 ];
 
+export const metadata = {
+  title: "Servicios de Tecnología y SaaS en México | BMV Digital",
+  description: "Desarrollo web, análisis de datos, software a medida, auditoría SEO, optimización GEO para buscadores con IA y cursos de inteligencia artificial. Soluciones SaaS para empresas en México.",
+  keywords: ["servicios tecnología México", "desarrollo web", "análisis datos", "software medida", "auditoría SEO", "GEO buscadores IA", "cursos IA México"],
+  alternates: { canonical: "https://www.bmvdigital.com.mx/servicios" },
+  openGraph: {
+    title: "Servicios de Tecnología | BMV Digital México",
+    description: "6 servicios de tecnología diseñados para impulsar tu negocio: web, datos, software, SEO, GEO e IA.",
+    url: "https://www.bmvdigital.com.mx/servicios",
+  },
+};
+
 export default function ServiciosPage() {
   return (
     <>
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.bmvdigital.com.mx" },
+          { "@type": "ListItem", position: 2, name: "Servicios", item: "https://www.bmvdigital.com.mx/servicios" },
+        ]
+      }} />
       {/* Hero */}
       <section className="relative pt-40 pb-24 px-6 md:px-16 border-b border-white/5 overflow-hidden">
         <div className="max-w-6xl mx-auto">
