@@ -52,6 +52,16 @@ const services = [
     tags: ["ChatGPT", "LangChain", "Automatización", "Prompt Engineering", "APIs de IA"],
     color: "#1ABC9C",
   },
+  {
+    id: "auditoria-geo",
+    num: "06",
+    title: "AUDITORÍA GEO",
+    tagline: "VISIBILIDAD EN LA IA.",
+    description:
+      "Generative Engine Optimization: optimizamos tu presencia para que los motores de búsqueda con IA (ChatGPT, Perplexity, Gemini, Copilot) recomienden tu marca.",
+    tags: ["GEO", "ChatGPT", "Perplexity", "Gemini", "LLM SEO"],
+    color: "#A855F7",
+  },
 ];
 
 export default function ServiciosPage() {
@@ -74,7 +84,7 @@ export default function ServiciosPage() {
 
         {/* Background number */}
         <div className="absolute right-8 top-24 text-[200px] font-black text-white/[0.02] leading-none select-none hidden md:block">
-          05
+          06
         </div>
       </section>
 

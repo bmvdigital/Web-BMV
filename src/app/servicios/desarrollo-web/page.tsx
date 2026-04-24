@@ -8,6 +8,7 @@ const features = [
   { title: "E-COMMERCE", body: "Tiendas online con experiencias de compra fluidas, pagos seguros e integración con tus sistemas existentes." },
   { title: "WEB APPS & SAAS", body: "Plataformas SaaS completas con autenticación, roles de usuario, facturación y paneles de control." },
   { title: "MANTENIMIENTO", body: "Tu sitio siempre actualizado, seguro y funcionando. Soporte técnico continuo y mejoras periódicas." },
+  { title: "AUDITORÍA GEO", body: "Optimizamos tu sitio para que los buscadores con IA (ChatGPT, Perplexity, Gemini) te recomienden. La próxima frontera del SEO." },
 ];
 
 const process = [
@@ -99,7 +100,7 @@ export default function DesarrolloWebPage() {
       <section className="py-16 px-6 md:px-16 border-b border-white/5">
         <div className="max-w-6xl mx-auto flex flex-wrap gap-4 items-center">
           <span className="text-[10px] tracking-[0.2em] uppercase text-white/30 mr-4">TECNOLOGÍAS</span>
-          {["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL", "MongoDB", "AWS", "Vercel", "Figma"].map((tech) => (
+          {["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL", "MongoDB", "AWS", "Vercel", "Figma", "GEO / LLM SEO"].map((tech) => (
             <span key={tech} className="text-[10px] tracking-[0.15em] uppercase px-4 py-2 border border-white/10 rounded-full text-white/40 hover:border-[#6EE010]/40 hover:text-[#6EE010] transition-colors">
               {tech}
             </span>

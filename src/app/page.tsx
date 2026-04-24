@@ -35,6 +35,12 @@ const services = [
     title: "CURSOS DE IA",
     short: "Formación práctica en inteligencia artificial. De cero a producción.",
   },
+  {
+    id: "auditoria-geo",
+    num: "06",
+    title: "AUDITORÍA GEO",
+    short: "Optimización para buscadores con IA: ChatGPT, Perplexity, Gemini y más.",
+  },
 ];
 
 export default function HomePage() {
