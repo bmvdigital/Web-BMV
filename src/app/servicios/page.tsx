@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
 import JsonLd from "@/components/JsonLd";
+import ServiciosTunnel from "@/components/ServiciosTunnel";
 
 const services = [
   {
@@ -89,8 +90,20 @@ export default function ServiciosPage() {
         ]
       }} />
       {/* Hero */}
-      <section className="relative pt-40 pb-24 px-6 md:px-16 border-b border-white/5 overflow-hidden">
-        <div className="max-w-6xl mx-auto">
+      <section className="relative min-h-[700px] md:min-h-[80vh] flex items-center pt-40 pb-24 px-6 md:px-16 border-b border-white/5 overflow-hidden">
+        {/* Particle tunnel fills the entire hero as a background */}
+        <div className="absolute inset-0 z-0">
+          <ServiciosTunnel />
+        </div>
+
+        {/* Left-side gradient so text stays readable over the tunnel */}
+        <div className="absolute inset-0 z-[1] bg-gradient-to-r from-black via-black/70 to-transparent pointer-events-none" />
+
+        {/* Bottom fade to blend seamlessly into the next section */}
+        <div className="absolute inset-x-0 bottom-0 z-[1] h-40 bg-gradient-to-t from-[#0a0a0a] to-transparent pointer-events-none" />
+
+        {/* Content */}
+        <div className="relative z-[2] max-w-6xl mx-auto w-full">
           <p className="section-tag">SERVICIOS</p>
           <h1 className="text-6xl md:text-8xl font-black uppercase leading-none tracking-tight">
             NACIDOS EN EL<br />
@@ -101,11 +114,6 @@ export default function ServiciosPage() {
             Cada servicio que ofrecemos está diseñado para llevarte más allá de donde estás hoy.
             Tecnología de punta, estrategia inteligente, resultados medibles.
           </p>
-        </div>
-
-        {/* Background number */}
-        <div className="absolute right-8 top-24 text-[200px] font-black text-white/[0.02] leading-none select-none hidden md:block">
-          06
         </div>
       </section>
 
