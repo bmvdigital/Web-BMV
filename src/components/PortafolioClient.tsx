@@ -32,17 +32,17 @@ export default function PortafolioClient() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-40 pb-0 px-6 md:px-16 border-b border-white/5">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_400px] gap-12 items-end">
+      <section className="relative pt-28 md:pt-40 pb-0 px-6 md:px-16 border-b border-white/5">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_400px] gap-8 md:gap-12 items-end">
           {/* Left: text */}
-          <div className="pb-16">
+          <div className="pb-10 md:pb-16">
             <p className="section-tag">PORTAFOLIO</p>
-            <h1 className="text-5xl md:text-7xl font-black uppercase leading-none tracking-tight">
+            <h1 className="text-[2.2rem] sm:text-5xl md:text-7xl font-black uppercase leading-none tracking-tight">
               CONSTRUIDOS<br />
               EN EL BORDE DE<br />
               <span className="text-[#6EE010]">LO EXPONENCIAL.</span>
             </h1>
-            <p className="mt-8 text-white/40 text-sm max-w-lg leading-relaxed tracking-wide">
+            <p className="mt-5 md:mt-8 text-white/40 text-xs sm:text-sm max-w-lg leading-relaxed tracking-wide">
               Cada proyecto es la historia de un reto convertido en solución digital.
               Trabajo real, resultados medibles.
             </p>
@@ -89,7 +89,7 @@ export default function PortafolioClient() {
                   rel="noopener noreferrer"
                   className="relative z-10 flex flex-col items-center gap-4 text-center"
                 >
-                  <span className="text-4xl md:text-6xl font-black uppercase tracking-widest text-white/30">
+                  <span className="text-2xl sm:text-4xl md:text-6xl font-black uppercase tracking-widest text-white/30">
                     {current.name}
                   </span>
                   <span className="bracket-btn text-[10px]">VISITAR SITIO</span>
@@ -108,7 +108,7 @@ export default function PortafolioClient() {
               {/* Project info */}
               <div className="grid md:grid-cols-2 gap-8 mb-6">
                 <div>
-                  <h2 className="text-3xl md:text-4xl font-black uppercase tracking-wide mb-3">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-wide mb-3">
                     {current.name}
                   </h2>
                   <div className="line-sep" />
@@ -155,7 +155,7 @@ export default function PortafolioClient() {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <ScrollReveal>
             <p className="section-tag">¿SIGUIENTE PROYECTO?</p>
-            <h2 className="text-4xl md:text-5xl font-black uppercase">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase">
               TU PROYECTO<br />
               <span className="text-[#6EE010]">AQUÍ.</span>
             </h2>

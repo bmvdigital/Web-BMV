@@ -57,11 +57,11 @@ export default function AnalisisDatosPage() {
         ]
       }} />
 
-      <section className="relative pt-40 pb-24 px-6 md:px-16 border-b border-white/5 overflow-hidden">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-end">
+      <section className="relative pt-28 md:pt-40 pb-16 md:pb-24 px-6 md:px-16 border-b border-white/5 overflow-hidden">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12 items-end">
           <div>
             <p className="section-tag">SERVICIOS / ANÁLISIS DE DATOS</p>
-            <h1 className="text-5xl md:text-7xl font-black uppercase leading-none tracking-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-black uppercase leading-none tracking-tight">
               DATOS QUE<br />
               <span style={{ color: "#5B8FA8" }}>DECIDEN.</span>
             </h1>
@@ -141,7 +141,7 @@ export default function AnalisisDatosPage() {
       <section className="py-24 px-6 md:px-16">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <ScrollReveal>
-            <h2 className="text-4xl md:text-5xl font-black uppercase">¿TUS DATOS<br />TRABAJAN PARA TI?</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase">¿TUS DATOS<br />TRABAJAN PARA TI?</h2>
           </ScrollReveal>
           <Link href="/contacto" className="bracket-btn text-[10px]">HABLEMOS</Link>
         </div>

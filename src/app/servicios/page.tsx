@@ -90,7 +90,7 @@ export default function ServiciosPage() {
         ]
       }} />
       {/* Hero */}
-      <section className="relative min-h-[700px] md:min-h-[80vh] flex items-center pt-40 pb-24 px-6 md:px-16 border-b border-white/5 overflow-hidden">
+      <section className="relative min-h-[580px] md:min-h-[80vh] flex items-center pt-28 md:pt-40 pb-20 md:pb-24 px-6 md:px-16 border-b border-white/5 overflow-hidden">
         {/* Particle tunnel fills the entire hero as a background */}
         <div className="absolute inset-0 z-0">
           <ServiciosTunnel />
@@ -105,7 +105,7 @@ export default function ServiciosPage() {
         {/* Content */}
         <div className="relative z-[2] max-w-6xl mx-auto w-full">
           <p className="section-tag">SERVICIOS</p>
-          <h1 className="text-6xl md:text-8xl font-black uppercase leading-none tracking-tight">
+          <h1 className="text-[2.3rem] sm:text-5xl md:text-7xl lg:text-8xl font-black uppercase leading-none tracking-tight">
             NACIDOS EN EL<br />
             BORDE DE LO<br />
             <span className="text-[#6EE010]">POSIBLE.</span>
@@ -123,39 +123,47 @@ export default function ServiciosPage() {
           {services.map((s, i) => (
             <ScrollReveal key={s.id} delay={i * 60}>
               <Link href={`/servicios/${s.id}`} className="group block">
-                <div className="grid md:grid-cols-[80px_1fr_280px] gap-6 md:gap-10 py-12 border-b border-white/5 hover:border-white/10 transition-colors">
-                  {/* Number */}
-                  <div className="flex items-start">
+                <div className="grid md:grid-cols-[80px_1fr_280px] gap-4 md:gap-10 py-8 md:py-12 border-b border-white/5 hover:border-white/10 transition-colors">
+                  {/* Number — desktop only column */}
+                  <div className="hidden md:flex items-start">
                     <span className="counter-label text-base">{s.num}</span>
                   </div>
 
                   {/* Content */}
                   <div>
-                    <h2 className="text-2xl md:text-3xl font-black uppercase tracking-wider mb-3 group-hover:text-[#6EE010] transition-colors">
+                    {/* Mobile: number + title on same line */}
+                    <div className="flex items-center gap-3 mb-2 md:hidden">
+                      <span className="counter-label text-sm flex-shrink-0">{s.num}</span>
+                      <h2 className="text-lg sm:text-xl font-black uppercase tracking-wider group-hover:text-[#6EE010] transition-colors leading-tight">
+                        {s.title}
+                      </h2>
+                    </div>
+                    {/* Desktop: title alone */}
+                    <h2 className="hidden md:block text-3xl font-black uppercase tracking-wider mb-3 group-hover:text-[#6EE010] transition-colors">
                       {s.title}
                     </h2>
-                    <p className="text-[10px] tracking-[0.2em] uppercase mb-4" style={{ color: s.color }}>
+                    <p className="text-[10px] tracking-[0.2em] uppercase mb-3 md:mb-4" style={{ color: s.color }}>
                       {s.tagline}
                     </p>
-                    <div className="line-sep" />
-                    <p className="text-white/40 text-sm leading-relaxed max-w-lg">
+                    <div className="line-sep hidden md:block" />
+                    <p className="text-white/40 text-xs sm:text-sm leading-relaxed max-w-lg hidden sm:block">
                       {s.description}
                     </p>
                   </div>
 
                   {/* Tags + CTA */}
                   <div className="flex flex-col justify-between items-start md:items-end">
-                    <div className="flex flex-wrap gap-2 md:justify-end">
+                    <div className="flex flex-wrap gap-1.5 md:justify-end">
                       {s.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="text-[9px] tracking-[0.15em] uppercase px-3 py-1.5 border border-white/10 rounded-full text-white/40"
+                          className="text-[9px] tracking-[0.12em] uppercase px-2.5 py-1 md:px-3 md:py-1.5 border border-white/10 rounded-full text-white/40"
                         >
                           {tag}
                         </span>
                       ))}
                     </div>
-                    <span className="bracket-btn text-[10px] mt-6 pl-0 group-hover:text-[#6EE010] transition-colors">
+                    <span className="bracket-btn text-[10px] mt-4 md:mt-6 pl-0 group-hover:text-[#6EE010] transition-colors">
                       VER MÁS
                     </span>
                   </div>
@@ -170,7 +178,7 @@ export default function ServiciosPage() {
       <section className="py-24 px-6 md:px-16 text-center border-t border-white/5">
         <ScrollReveal>
           <p className="section-tag justify-center">¿LISTO?</p>
-          <h2 className="text-4xl md:text-5xl font-black uppercase mb-8">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase mb-8">
             CONSTRUYAMOS<br />
             <span className="text-[#6EE010]">JUNTOS.</span>
           </h2>

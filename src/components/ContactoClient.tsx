@@ -65,11 +65,11 @@ export default function ContactoClient() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-40 pb-16 px-6 md:px-16 border-b border-white/5 overflow-hidden">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-end">
+      <section className="relative pt-28 md:pt-40 pb-12 md:pb-16 px-6 md:px-16 border-b border-white/5 overflow-hidden">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12 items-end">
           <div>
             <p className="section-tag">CONTACTO</p>
-            <h1 className="text-5xl md:text-7xl font-black uppercase leading-none tracking-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-black uppercase leading-none tracking-tight">
               HAGÁMOSLO<br />
               <span className="text-[#6EE010]">REALIDAD.</span>
             </h1>
@@ -85,7 +85,7 @@ export default function ContactoClient() {
 
       {/* Form + Info */}
       <section className="py-20 px-6 md:px-16">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_360px] gap-20">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_360px] gap-12 md:gap-20">
 
           {/* Form */}
           <ScrollReveal>

@@ -86,11 +86,11 @@ export default function CursosIAPage() {
         ]
       }} />
 
-      <section className="relative pt-40 pb-24 px-6 md:px-16 border-b border-white/5 overflow-hidden">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-end">
+      <section className="relative pt-28 md:pt-40 pb-16 md:pb-24 px-6 md:px-16 border-b border-white/5 overflow-hidden">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12 items-end">
           <div>
             <p className="section-tag">SERVICIOS / CURSOS DE IA</p>
-            <h1 className="text-5xl md:text-7xl font-black uppercase leading-none tracking-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-black uppercase leading-none tracking-tight">
               INTELIGENCIA<br />
               <span style={{ color: "#1ABC9C" }}>ARTIFICIAL.</span>
             </h1>
@@ -135,15 +135,32 @@ export default function CursosIAPage() {
           <div className="flex flex-col divide-y divide-white/5">
             {courses.map((c, i) => (
               <ScrollReveal key={c.num} delay={i * 80}>
-                <div className="py-10 grid md:grid-cols-[80px_1fr_160px] gap-6 items-start group hover:bg-[#111]/50 px-4 -mx-4 transition-colors">
-                  <span className="counter-label">{c.num}</span>
-                  <div>
-                    <h3 className="text-xl font-black uppercase tracking-wide mb-2 group-hover:text-[#1ABC9C] transition-colors">{c.title}</h3>
-                    <p className="text-white/40 text-xs leading-relaxed max-w-lg">{c.body}</p>
+                <div className="py-8 md:py-10 px-3 md:px-4 -mx-3 md:-mx-4 group hover:bg-[#111]/50 transition-colors">
+                  {/* Mobile layout */}
+                  <div className="flex items-start gap-3 md:hidden">
+                    <span className="counter-label flex-shrink-0 mt-0.5">{c.num}</span>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-start justify-between gap-3">
+                        <h3 className="text-base font-black uppercase tracking-wide group-hover:text-[#1ABC9C] transition-colors leading-tight">{c.title}</h3>
+                        <div className="text-right flex-shrink-0">
+                          <p className="text-[10px] tracking-[0.1em] uppercase text-[#1ABC9C] mb-0.5">{c.duration}</p>
+                          <p className="text-[10px] tracking-[0.1em] uppercase text-white/30">{c.level}</p>
+                        </div>
+                      </div>
+                      <p className="text-white/40 text-xs leading-relaxed mt-2">{c.body}</p>
+                    </div>
                   </div>
-                  <div className="text-right">
-                    <p className="text-[10px] tracking-[0.15em] uppercase text-[#1ABC9C] mb-1">{c.duration}</p>
-                    <p className="text-[10px] tracking-[0.15em] uppercase text-white/30">{c.level}</p>
+                  {/* Desktop layout */}
+                  <div className="hidden md:grid md:grid-cols-[80px_1fr_160px] gap-6 items-start">
+                    <span className="counter-label">{c.num}</span>
+                    <div>
+                      <h3 className="text-xl font-black uppercase tracking-wide mb-2 group-hover:text-[#1ABC9C] transition-colors">{c.title}</h3>
+                      <p className="text-white/40 text-xs leading-relaxed max-w-lg">{c.body}</p>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-[10px] tracking-[0.15em] uppercase text-[#1ABC9C] mb-1">{c.duration}</p>
+                      <p className="text-[10px] tracking-[0.15em] uppercase text-white/30">{c.level}</p>
+                    </div>
                   </div>
                 </div>
               </ScrollReveal>
@@ -196,7 +213,7 @@ export default function CursosIAPage() {
       <section className="py-24 px-6 md:px-16">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <ScrollReveal>
-            <h2 className="text-4xl md:text-5xl font-black uppercase">¿TU EQUIPO<br />LISTO PARA LA IA?</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase">¿TU EQUIPO<br />LISTO PARA LA IA?</h2>
           </ScrollReveal>
           <Link href="/contacto" className="bracket-btn text-[10px]">INSCRÍBETE HOY</Link>
         </div>

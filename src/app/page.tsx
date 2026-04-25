@@ -89,12 +89,12 @@ export default function HomePage() {
         {/* Hero content */}
         <div className="relative z-20 px-6 md:px-16 max-w-5xl">
           <p className="section-tag mb-6">BMV DIGITAL</p>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black uppercase leading-none tracking-tight text-white mb-8">
+          <h1 className="text-[2.2rem] sm:text-5xl md:text-7xl lg:text-8xl font-black uppercase leading-none tracking-tight text-white mb-6 md:mb-8">
             EL FUTURO<br />
             NO LLEGA.<br />
             <span className="text-[#6EE010]">LO CONSTRUIMOS.</span>
           </h1>
-          <p className="text-sm md:text-base text-white/50 max-w-md leading-relaxed mb-10 tracking-wide">
+          <p className="text-xs sm:text-sm md:text-base text-white/50 max-w-md leading-relaxed mb-8 md:mb-10 tracking-wide">
             Soluciones SaaS de vanguardia. Desarrollo web, software, datos,<br className="hidden md:block" />
             SEO e inteligencia artificial — todo bajo un mismo techo.
           </p>
@@ -119,7 +119,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <ScrollReveal>
             <p className="section-tag">POR QUÉ BMV</p>
-            <h2 className="text-4xl md:text-5xl font-black uppercase leading-tight mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase leading-tight mb-6">
               MUÉVETE A LA<br />
               VELOCIDAD DEL<br />
               <span className="text-[#6EE010]">AVANCE.</span>
@@ -170,7 +170,7 @@ export default function HomePage() {
             <div className="flex items-end justify-between mb-16">
               <div>
                 <p className="section-tag">SERVICIOS</p>
-                <h2 className="text-4xl md:text-5xl font-black uppercase leading-tight">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase leading-tight">
                   QUÉ<br />HACEMOS
                 </h2>
               </div>
@@ -204,8 +204,8 @@ export default function HomePage() {
                     href={`/servicios/${s.id}`}
                     className="flex items-center justify-between py-7 group"
                   >
-                    <div className="flex items-center gap-8">
-                      <span className="counter-label w-8">{s.num}</span>
+                    <div className="flex items-center gap-4 md:gap-8">
+                      <span className="counter-label w-6 md:w-8">{s.num}</span>
                       <div>
                         <h3 className="text-lg md:text-xl font-bold uppercase tracking-wide group-hover:text-[#6EE010] transition-colors">
                           {s.title}
@@ -235,7 +235,7 @@ export default function HomePage() {
             <div className="flex items-end justify-between mb-12">
               <div>
                 <p className="section-tag">PORTAFOLIO</p>
-                <h2 className="text-4xl md:text-5xl font-black uppercase leading-tight">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase leading-tight">
                   NUESTRO<br />TRABAJO
                 </h2>
               </div>
@@ -252,19 +252,19 @@ export default function HomePage() {
                 <div className="relative aspect-[16/7] bg-gradient-to-br from-[#1a1a2e] to-[#16213e] flex items-center justify-center overflow-hidden">
                   {/* Gradient overlay on hover */}
                   <div className="absolute inset-0 bg-[#6EE010]/0 group-hover:bg-[#6EE010]/5 transition-all duration-500" />
-                  <span className="text-white/20 text-6xl font-black uppercase tracking-widest">ETA AVIACIÓN</span>
+                  <span className="text-white/20 text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-widest">ETA AVIACIÓN</span>
                 </div>
 
-                <div className="p-8 flex items-start justify-between">
+                <div className="p-5 sm:p-8 flex items-start justify-between gap-4">
                   <div>
-                    <h3 className="text-xl font-bold uppercase tracking-wide mb-2">ETA AVIACIÓN</h3>
+                    <h3 className="text-base sm:text-xl font-bold uppercase tracking-wide mb-2">ETA AVIACIÓN</h3>
                     <div className="line-sep" />
-                    <p className="text-white/40 text-xs max-w-lg leading-relaxed">
+                    <p className="text-white/40 text-xs max-w-lg leading-relaxed hidden sm:block">
                       Diseño y desarrollo del sitio web corporativo para empresa líder en servicios de aviación.
                       Plataforma moderna, rápida y orientada a la conversión.
                     </p>
                   </div>
-                  <span className="counter-label">01 / 01</span>
+                  <span className="counter-label flex-shrink-0">01 / 01</span>
                 </div>
 
                 <div className="px-8 pb-8">
@@ -282,7 +282,7 @@ export default function HomePage() {
       <section className="py-24 px-6 md:px-16 border-t border-white/5 text-center">
         <ScrollReveal>
           <p className="section-tag justify-center">EMPECEMOS</p>
-          <h2 className="text-4xl md:text-6xl font-black uppercase leading-tight mb-8 max-w-3xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-black uppercase leading-tight mb-8 max-w-3xl mx-auto">
             LISTO PARA<br />
             DAR EL SIGUIENTE<br />
             <span className="text-[#6EE010]">PASO?</span>

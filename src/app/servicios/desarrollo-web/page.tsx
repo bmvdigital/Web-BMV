@@ -66,11 +66,11 @@ export default function DesarrolloWebPage() {
       }} />
 
       {/* Hero */}
-      <section className="relative pt-40 pb-24 px-6 md:px-16 border-b border-white/5 overflow-hidden">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-end">
+      <section className="relative pt-28 md:pt-40 pb-16 md:pb-24 px-6 md:px-16 border-b border-white/5 overflow-hidden">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12 items-end">
           <div>
             <p className="section-tag">SERVICIOS / DESARROLLO WEB</p>
-            <h1 className="text-5xl md:text-7xl font-black uppercase leading-none tracking-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-black uppercase leading-none tracking-tight">
               WEB QUE<br />
               <span className="text-[#6EE010]">VENDE.</span>
             </h1>
@@ -126,7 +126,7 @@ export default function DesarrolloWebPage() {
             </h2>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             {process.map((p, i) => (
               <ScrollReveal key={p.num} delay={i * 100}>
                 <div className="border-t-2 border-[#6EE010] pt-6">
@@ -185,7 +185,7 @@ export default function DesarrolloWebPage() {
       <section className="py-24 px-6 md:px-16">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <ScrollReveal>
-            <h2 className="text-4xl md:text-5xl font-black uppercase">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase">
               ¿TIENES UN<br />PROYECTO EN MENTE?
             </h2>
           </ScrollReveal>

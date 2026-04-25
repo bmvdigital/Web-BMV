@@ -57,11 +57,11 @@ export default function DesarrolloSoftwarePage() {
         ]
       }} />
 
-      <section className="relative pt-40 pb-24 px-6 md:px-16 border-b border-white/5 overflow-hidden">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-end">
+      <section className="relative pt-28 md:pt-40 pb-16 md:pb-24 px-6 md:px-16 border-b border-white/5 overflow-hidden">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12 items-end">
           <div>
             <p className="section-tag">SERVICIOS / DESARROLLO DE SOFTWARE</p>
-            <h1 className="text-5xl md:text-7xl font-black uppercase leading-none tracking-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-black uppercase leading-none tracking-tight">
               SOFTWARE<br />
               <span style={{ color: "#9B59B6" }}>SIN LÍMITES.</span>
             </h1>
@@ -139,7 +139,7 @@ export default function DesarrolloSoftwarePage() {
       <section className="py-24 px-6 md:px-16">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <ScrollReveal>
-            <h2 className="text-4xl md:text-5xl font-black uppercase">¿TIENES UNA IDEA<br />DE PRODUCTO?</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase">¿TIENES UNA IDEA<br />DE PRODUCTO?</h2>
           </ScrollReveal>
           <Link href="/contacto" className="bracket-btn text-[10px]">CONSTRUYÁMOSLA</Link>
         </div>

@@ -81,11 +81,11 @@ export default function AuditoriaGeoPage() {
       }} />
 
       {/* Hero */}
-      <section className="relative pt-40 pb-24 px-6 md:px-16 border-b border-white/5 overflow-hidden">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-end">
+      <section className="relative pt-28 md:pt-40 pb-16 md:pb-24 px-6 md:px-16 border-b border-white/5 overflow-hidden">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12 items-end">
           <div>
             <p className="section-tag">SERVICIOS / AUDITORÍA GEO</p>
-            <h1 className="text-5xl md:text-7xl font-black uppercase leading-none tracking-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-black uppercase leading-none tracking-tight">
               SÉ LA FUENTE<br />
               <span style={{ color: "#A855F7" }}>QUE LA IA CITA.</span>
             </h1>
@@ -208,24 +208,28 @@ export default function AuditoriaGeoPage() {
             <div className="flex flex-col gap-6">
               <p className="section-tag">GEO VS SEO TRADICIONAL</p>
               <div className="border border-white/5 rounded-lg overflow-hidden">
-                <div className="grid grid-cols-3 gap-0">
-                  <div className="p-4 bg-white/5 text-[10px] tracking-[0.15em] uppercase text-white/30" />
-                  <div className="p-4 bg-white/5 text-[10px] tracking-[0.15em] uppercase text-white/50 text-center">SEO</div>
-                  <div className="p-4 bg-[#A855F7]/10 text-[10px] tracking-[0.15em] uppercase text-[#A855F7] text-center">GEO</div>
-                </div>
-                {[
-                  ["Objetivo", "Ranking en Google", "Citado por IA"],
-                  ["Canal", "Buscadores clásicos", "LLMs & AI Search"],
-                  ["Formato", "Keywords & links", "Contexto & autoridad"],
-                  ["Métrica", "Posición / CTR", "Frecuencia de mención"],
-                  ["Tendencia", "Maduró", "En explosión"],
-                ].map(([label, seo, geo]) => (
-                  <div key={label} className="grid grid-cols-3 border-t border-white/5">
-                    <div className="p-4 text-[10px] tracking-[0.1em] uppercase text-white/30">{label}</div>
-                    <div className="p-4 text-[10px] text-white/40 text-center">{seo}</div>
-                    <div className="p-4 text-[10px] text-[#A855F7] text-center font-medium">{geo}</div>
+                <div className="overflow-x-auto">
+                  <div className="min-w-[300px]">
+                    <div className="grid grid-cols-3 gap-0">
+                      <div className="p-3 md:p-4 bg-white/5 text-[10px] tracking-[0.15em] uppercase text-white/30" />
+                      <div className="p-3 md:p-4 bg-white/5 text-[10px] tracking-[0.15em] uppercase text-white/50 text-center">SEO</div>
+                      <div className="p-3 md:p-4 bg-[#A855F7]/10 text-[10px] tracking-[0.15em] uppercase text-[#A855F7] text-center">GEO</div>
+                    </div>
+                    {[
+                      ["Objetivo", "Ranking en Google", "Citado por IA"],
+                      ["Canal", "Buscadores clásicos", "LLMs & AI Search"],
+                      ["Formato", "Keywords & links", "Contexto & autoridad"],
+                      ["Métrica", "Posición / CTR", "Frecuencia de mención"],
+                      ["Tendencia", "Maduró", "En explosión"],
+                    ].map(([label, seo, geo]) => (
+                      <div key={label} className="grid grid-cols-3 border-t border-white/5">
+                        <div className="p-3 md:p-4 text-[10px] tracking-[0.1em] uppercase text-white/30 whitespace-nowrap">{label}</div>
+                        <div className="p-3 md:p-4 text-[10px] text-white/40 text-center">{seo}</div>
+                        <div className="p-3 md:p-4 text-[10px] text-[#A855F7] text-center font-medium">{geo}</div>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </div>
               </div>
 
               <div className="mt-4">
@@ -285,7 +289,7 @@ export default function AuditoriaGeoPage() {
       <section className="py-24 px-6 md:px-16">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <ScrollReveal>
-            <h2 className="text-4xl md:text-5xl font-black uppercase">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase">
               ¿LA IA CONOCE<br />TU MARCA?
             </h2>
           </ScrollReveal>

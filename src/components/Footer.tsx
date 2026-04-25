@@ -18,9 +18,9 @@ export default function Footer() {
   return (
     <footer className="relative w-full overflow-hidden">
       {/* CTA strip */}
-      <div className="grid md:grid-cols-2 min-h-[420px]">
+      <div className="grid md:grid-cols-2 min-h-[320px] md:min-h-[420px]">
         {/* Left: dark + spiral */}
-        <div className="relative bg-[#0a0a0a] flex items-center justify-center overflow-hidden min-h-[280px]">
+        <div className="relative bg-[#0a0a0a] flex items-center justify-center overflow-hidden min-h-[220px] md:min-h-[280px]">
           <div className="absolute inset-0">
             <ParticleSpiral />
           </div>
@@ -31,7 +31,7 @@ export default function Footer() {
         </div>
 
         {/* Right: green panel */}
-        <div className="bg-[#6EE010] flex flex-col justify-between p-10 md:p-14">
+        <div className="bg-[#6EE010] flex flex-col justify-between p-8 md:p-14">
           <div>
             <p className="text-[10px] tracking-[0.2em] uppercase text-black/60 mb-2">IMPULSAMOS TU NEGOCIO.</p>
             <p className="text-[11px] tracking-[0.15em] uppercase text-black/70 font-medium leading-relaxed">
@@ -63,13 +63,13 @@ export default function Footer() {
       <div className="bg-[#6EE010] border-t border-black/10">
         <div className="grid md:grid-cols-2">
           {/* Nav links */}
-          <div className="px-10 md:px-14 py-10">
-            <ul className="flex flex-col gap-4">
+          <div className="px-8 md:px-14 py-8 md:py-10">
+            <ul className="flex flex-col gap-3 md:gap-4">
               {navLinks.map((l) => (
                 <li key={l.href}>
                   <Link
                     href={l.href}
-                    className="text-xl md:text-2xl font-bold text-black uppercase tracking-wider hover:opacity-60 transition-opacity"
+                    className="text-lg md:text-2xl font-bold text-black uppercase tracking-wider hover:opacity-60 transition-opacity"
                   >
                     {l.label}
                   </Link>
@@ -79,7 +79,7 @@ export default function Footer() {
           </div>
 
           {/* Right col */}
-          <div className="px-10 md:px-14 py-10 flex flex-col justify-between">
+          <div className="px-8 md:px-14 py-8 md:py-10 flex flex-col justify-between">
             <div>
               <p className="text-[10px] tracking-[0.2em] uppercase text-black/50 mb-1">CONTACTO</p>
               <a
