@@ -32,7 +32,7 @@ export default function PortafolioClient() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-40 pb-0 px-6 md:px-16 border-b border-white/5 overflow-hidden">
+      <section className="relative pt-40 pb-0 px-6 md:px-16 border-b border-white/5">
         <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_400px] gap-12 items-end">
           {/* Left: text */}
           <div className="pb-16">
@@ -48,8 +48,8 @@ export default function PortafolioClient() {
             </p>
           </div>
 
-          {/* Right: generative branching tree */}
-          <div className="hidden md:block h-[500px]">
+          {/* Right: generative branching tree — overflow-visible so canopy bleeds past column */}
+          <div className="hidden md:block h-[560px]" style={{ overflow: "visible" }}>
             <BranchingTree className="w-full h-full" />
           </div>
         </div>

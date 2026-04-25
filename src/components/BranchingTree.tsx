@@ -399,9 +399,8 @@ export default function BranchingTree({ className = "" }: { className?: string }
     }
 
     function drawScene(time: number) {
+      // Transparent canvas — tree floats over the page background, no solid box
       ctx.clearRect(0, 0, W, H);
-      ctx.fillStyle = "#0a0a0a";
-      ctx.fillRect(0, 0, W, H);
 
       if (treeAlpha > 0.05) {
         // Warm canopy glow behind crown
@@ -432,13 +431,6 @@ export default function BranchingTree({ className = "" }: { className?: string }
       ctx.save();
       drawParticles(ctx, treeAlpha);
       ctx.restore();
-
-      // Vignette
-      const vigGrad = ctx.createRadialGradient(W/2, H/2, W*0.3, W/2, H/2, W*0.78);
-      vigGrad.addColorStop(0, "rgba(10,10,10,0)");
-      vigGrad.addColorStop(1, "rgba(4,4,4,0.3)");
-      ctx.fillStyle = vigGrad;
-      ctx.fillRect(0, 0, W, H);
     }
 
     // State machine
@@ -469,8 +461,6 @@ export default function BranchingTree({ className = "" }: { className?: string }
         }
         case "waiting": {
           ctx.clearRect(0, 0, W, H);
-          ctx.fillStyle = "#0a0a0a";
-          ctx.fillRect(0, 0, W, H);
           waitTimer++;
           if (waitTimer >= WAIT_DURATION) createTree();
           break;
@@ -512,12 +502,19 @@ export default function BranchingTree({ className = "" }: { className?: string }
     };
   }, []);
 
-  // hue-rotate(90deg) shifts warm amber palette → lime green to match brand
+  // hue-rotate(90deg) shifts warm amber palette → lime green to match brand.
+  // Radial mask fades all four edges so there is no rectangular hard border.
   return (
     <div
       ref={mountRef}
       className={`w-full h-full ${className}`}
-      style={{ filter: "hue-rotate(90deg) saturate(1.2)" }}
+      style={{
+        filter: "hue-rotate(90deg) saturate(1.2)",
+        maskImage:
+          "radial-gradient(ellipse 88% 88% at 50% 58%, black 28%, rgba(0,0,0,0.7) 55%, transparent 82%)",
+        WebkitMaskImage:
+          "radial-gradient(ellipse 88% 88% at 50% 58%, black 28%, rgba(0,0,0,0.7) 55%, transparent 82%)",
+      }}
     />
   );
 }
