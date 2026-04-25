@@ -1,8 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
+
+const BranchingTree = dynamic(() => import("./BranchingTree"), { ssr: false });
 
 const projects = [
   {
@@ -29,21 +32,26 @@ export default function PortafolioClient() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-40 pb-16 px-6 md:px-16 border-b border-white/5 overflow-hidden">
-        <div className="max-w-6xl mx-auto">
-          <p className="section-tag">PORTAFOLIO</p>
-          <h1 className="text-6xl md:text-8xl font-black uppercase leading-none tracking-tight">
-            CONSTRUIDOS<br />
-            EN EL BORDE DE<br />
-            <span className="text-[#6EE010]">LO EXPONENCIAL.</span>
-          </h1>
-          <p className="mt-8 text-white/40 text-sm max-w-lg leading-relaxed tracking-wide">
-            Cada proyecto es la historia de un reto convertido en solución digital.
-            Trabajo real, resultados medibles.
-          </p>
-        </div>
-        <div className="absolute right-8 top-24 text-[200px] font-black text-white/[0.02] leading-none select-none hidden md:block">
-          WRK
+      <section className="relative pt-40 pb-0 px-6 md:px-16 border-b border-white/5 overflow-hidden">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_400px] gap-12 items-end">
+          {/* Left: text */}
+          <div className="pb-16">
+            <p className="section-tag">PORTAFOLIO</p>
+            <h1 className="text-5xl md:text-7xl font-black uppercase leading-none tracking-tight">
+              CONSTRUIDOS<br />
+              EN EL BORDE DE<br />
+              <span className="text-[#6EE010]">LO EXPONENCIAL.</span>
+            </h1>
+            <p className="mt-8 text-white/40 text-sm max-w-lg leading-relaxed tracking-wide">
+              Cada proyecto es la historia de un reto convertido en solución digital.
+              Trabajo real, resultados medibles.
+            </p>
+          </div>
+
+          {/* Right: generative branching tree */}
+          <div className="hidden md:block h-[500px]">
+            <BranchingTree className="w-full h-full" />
+          </div>
         </div>
       </section>
 
