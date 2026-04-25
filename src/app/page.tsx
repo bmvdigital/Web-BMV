@@ -3,7 +3,8 @@ import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
 import JsonLd from "@/components/JsonLd";
 
-const ParticleWave = dynamic(() => import("@/components/ParticleWave"), { ssr: false });
+const ParticleWave   = dynamic(() => import("@/components/ParticleWave"),   { ssr: false });
+const EventHorizon   = dynamic(() => import("@/components/EventHorizon"),   { ssr: false });
 
 const services = [
   {
@@ -151,8 +152,20 @@ export default function HomePage() {
       </section>
 
       {/* ── SERVICIOS PREVIEW ────────────────────────────────── */}
-      <section className="py-24 px-6 md:px-16 border-t border-white/5">
-        <div className="max-w-6xl mx-auto">
+      <section className="relative py-24 px-6 md:px-16 border-t border-white/5 overflow-hidden">
+        {/* Event-horizon black hole — decorative background, right side */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <div className="absolute right-0 top-0 h-full w-[55%] hidden md:block">
+            <EventHorizon className="w-full h-full" />
+          </div>
+          {/* Left gradient keeps text readable */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/90 to-[#0a0a0a]/30" />
+          {/* Top + bottom fades to blend with adjacent sections */}
+          <div className="absolute inset-x-0 top-0    h-24 bg-gradient-to-b from-[#0a0a0a] to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
+        </div>
+
+        <div className="relative z-10 max-w-6xl mx-auto">
           <ScrollReveal>
             <div className="flex items-end justify-between mb-16">
               <div>
