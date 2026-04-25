@@ -69,8 +69,11 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
   },
   icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico" },
+    ],
+    apple: { url: "/apple-touch-icon.svg", type: "image/svg+xml" },
   },
   verification: {
     google: "",  // Add Google Search Console verification token here
