@@ -28,19 +28,16 @@ jobs:
       - name: Build estático
         run: npm run build
 
-      - name: Instalar lftp
-        run: sudo apt-get install -y lftp
-
-      - name: Deploy vía FTP
+      - name: Configurar clave SSH
         run: |
-          lftp -c "
-          set ftp:ssl-allow no;
-          set ssl:verify-certificate no;
-          set ftp:passive-mode on;
-          set net:timeout 30;
-          set net:max-retries 3;
-          set net:reconnect-interval-base 5;
-          open -u '${{ secrets.FTP_USERNAME }}','${{ secrets.FTP_PASSWORD }}' '${{ secrets.FTP_SERVER }}';
-          mirror --reverse --delete --no-perms --parallel=2 ./out/ ./;
-          bye;
-          "
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p 22 -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Deploy vía rsync sobre SSH
+        run: |
+          rsync -avz --delete \
+            -e "ssh -i ~/.ssh/deploy_key -p 22 -o StrictHostKeyChecking=no" \
+            ./out/ \
+            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home1/dccfedaa/public_html/
