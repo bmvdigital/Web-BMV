@@ -5,6 +5,12 @@ import ScrollReveal from "@/components/ScrollReveal";
 
 const WA_NUMBER = "529936010071";
 
+const socialLinks = [
+  { label: "FACEBOOK", href: "https://www.facebook.com/profile.php?id=61570415070320" },
+  { label: "INSTAGRAM", href: "https://www.instagram.com/bmvdigital/" },
+  { label: "WHATSAPP", href: `https://wa.me/${WA_NUMBER}` },
+];
+
 const services = [
   "Desarrollo Web",
   "Análisis de Datos",
@@ -258,14 +264,16 @@ export default function ContactoClient() {
               <div>
                 <p className="text-[10px] tracking-[0.2em] uppercase text-white/30 mb-4">REDES</p>
                 <div className="flex flex-col gap-3">
-                  {["LinkedIn", "Instagram", "Facebook"].map((s) => (
+                  {socialLinks.map((s) => (
                     <a
-                      key={s}
-                      href="#"
+                      key={s.label}
+                      href={s.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-[10px] tracking-[0.2em] uppercase text-white/40 hover:text-[#6EE010] transition-colors flex items-center gap-3"
                     >
                       <span className="w-4 h-px bg-current" />
-                      {s}
+                      {s.label}
                     </a>
                   ))}
                 </div>

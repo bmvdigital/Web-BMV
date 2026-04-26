@@ -12,6 +12,12 @@ const navLinks = [
   { href: "/contacto", label: "CONTACTO" },
 ];
 
+const socialLinks = [
+  { label: "FACEBOOK", href: "https://www.facebook.com/profile.php?id=61570415070320" },
+  { label: "INSTAGRAM", href: "https://www.instagram.com/bmvdigital/" },
+  { label: "WHATSAPP", href: "https://wa.me/529936010071" },
+];
+
 export default function Footer() {
   const year = new Date().getFullYear();
 
@@ -94,13 +100,15 @@ export default function Footer() {
             <div className="mt-8">
               <p className="text-[10px] tracking-[0.2em] uppercase text-black/50 mb-3">SÍGUENOS</p>
               <div className="flex gap-6">
-                {["LinkedIn", "Instagram", "Facebook"].map((s) => (
+                {socialLinks.map((s) => (
                   <a
-                    key={s}
-                    href="#"
+                    key={s.label}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-[10px] tracking-[0.15em] uppercase text-black font-medium hover:opacity-50 transition-opacity"
                   >
-                    {s}
+                    {s.label}
                   </a>
                 ))}
               </div>
