@@ -38,6 +38,6 @@ jobs:
       - name: Deploy vía rsync sobre SSH
         run: |
           rsync -avz --delete \
-            -e "ssh -i ~/.ssh/deploy_key -p 22 -o StrictHostKeyChecking=no -o IdentitiesOnly=yes" \
+            -e "ssh -q -i ~/.ssh/deploy_key -p 22 -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o LogLevel=ERROR" \
             ./out/ \
             ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home1/dccfedaa/public_html/
