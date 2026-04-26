@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --green: #6EE010;
+  --green-dark: #4CAF00;
+  --black: #0a0a0a;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0a0a0a;
+  color: #ffffff;
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: #6EE010; border-radius: 2px; }
+
+/* Bracket button */
+.bracket-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.bracket-btn::before,
+.bracket-btn::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  transition: all 0.3s ease;
+}
+
+.bracket-btn::before {
+  top: 0; left: 0;
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+}
+
+.bracket-btn::after {
+  bottom: 0; right: 0;
+  border-bottom: 1px solid white;
+  border-right: 1px solid white;
+}
+
+.bracket-btn:hover { color: #6EE010; }
+.bracket-btn:hover::before,
+.bracket-btn:hover::after { border-color: #6EE010; width: 14px; height: 14px; }
+
+/* Green bracket variant */
+.bracket-btn-green {
+  color: #0a0a0a;
+}
+.bracket-btn-green::before,
+.bracket-btn-green::after { border-color: #0a0a0a; }
+.bracket-btn-green:hover { color: #0a0a0a; }
+.bracket-btn-green:hover::before,
+.bracket-btn-green:hover::after { border-color: #0a0a0a; }
+
+/* Scroll label */
+.scroll-label {
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.scroll-label::after {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  background: #6EE010;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.7); }
+}
+
+/* Section label tag */
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 24px;
+}
+
+.section-tag::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: #6EE010;
+  border-radius: 50%;
+}
+
+/* Number counter */
+.counter-label {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: rgba(255,255,255,0.4);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Line separator */
+.line-sep {
+  width: 40px;
+  height: 1px;
+  background: rgba(255,255,255,0.2);
+  margin: 16px 0;
+}
+
+/* Fade in on scroll utility */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
