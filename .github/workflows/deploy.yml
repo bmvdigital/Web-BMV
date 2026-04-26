@@ -19,7 +19,7 @@ jobs:
           node-version: '20'
 
       - name: Instalar dependencias
-        run: npm ci
+        run: npm install
 
       - name: Build estático
         run: npm run build
