@@ -29,9 +29,14 @@ jobs:
 
       - name: Deploy vía FTP
         run: |
-          lftp -u "${{ secrets.FTP_USERNAME }}","${{ secrets.FTP_PASSWORD }}" "${{ secrets.FTP_SERVER }}" <<EOF
-          set ftp:ssl-allow no
-          set ssl:verify-certificate no
-          mirror --reverse --delete --verbose ./out/ ./
-          bye
-          EOF
+          lftp -c "
+          set ftp:ssl-allow no;
+          set ssl:verify-certificate no;
+          set ftp:passive-mode on;
+          set net:timeout 30;
+          set net:max-retries 3;
+          set net:reconnect-interval-base 5;
+          open -u '${{ secrets.FTP_USERNAME }}','${{ secrets.FTP_PASSWORD }}' '${{ secrets.FTP_SERVER }}';
+          mirror --reverse --delete --no-perms --parallel=2 ./out/ ./;
+          bye;
+          "
