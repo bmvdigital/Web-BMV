@@ -35,9 +35,20 @@ jobs:
           chmod 600 ~/.ssh/deploy_key
           ssh-keyscan -p 22 -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts
 
-      - name: Deploy vía rsync sobre SSH
+      - name: Limpiar public_html
         run: |
-          rsync -avz --delete \
-            -e "ssh -q -i ~/.ssh/deploy_key -p 22 -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -o LogLevel=ERROR" \
-            ./out/ \
-            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home1/dccfedaa/public_html/
+          ssh -q -i ~/.ssh/deploy_key -p 22 \
+            -o StrictHostKeyChecking=no \
+            -o IdentitiesOnly=yes \
+            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
+            "find ~/public_html -mindepth 1 -delete 2>/dev/null; true"
+
+      - name: Deploy vía SCP
+        run: |
+          scp -q -r \
+            -i ~/.ssh/deploy_key \
+            -P 22 \
+            -o StrictHostKeyChecking=no \
+            -o IdentitiesOnly=yes \
+            ./out/. \
+            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:~/public_html/
