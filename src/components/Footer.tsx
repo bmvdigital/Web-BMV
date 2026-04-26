@@ -84,6 +84,7 @@ export default function Footer() {
               <p className="text-[10px] tracking-[0.2em] uppercase text-black/50 mb-1">CONTACTO</p>
               <a
                 href="mailto:contacto@bmvdigital.com.mx"
+                rel="nofollow"
                 className="text-sm font-medium text-black hover:opacity-60 transition-opacity"
               >
                 contacto@bmvdigital.com.mx
